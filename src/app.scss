@@ -1,0 +1,21 @@
+@use './components/hello/hello.scss';
+
+$_design-token: (
+  'color-1': #333,
+  'color-2': #eee,
+  'color-3': #8f8,
+  'font-family-1': #{sans-serif},
+  'font-family-2': #{Georgia, serif}
+);
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-size: 100%;
+  font-family: map-get( $_design-token, 'font-family-1');
+  background-color: map-get($map: $_design-token, $key: 'color-1');
+  color: map-get($map: $_design-token, $key: 'color-2');
+}
+
